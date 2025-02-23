@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>X Men - Episodios de la serie X Men - Web X-Men</title>
+<link rel="shortcut icon" href="k.gif">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<meta name="author" content="Johan Gzz">
+<meta name="description" content="Capitulos, episodios, videos, y más contenido de la serie X-men para ti.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+</head>
+<body class="cuerpo">
+<div align="left" style="padding-left:3%;"><h1><img class="tituloprincipalh1" src="titulazo.png" title="X-Men" alt="X men"></h1></div>
+<div align="right" style="padding-right:3%; margin-top:-3.1%;">Hora: <i id="reloj"></i></div>
+
+<script type="text/javascript">
+function startTime(){
+today=new Date();
+h=today.getHours();
+m=today.getMinutes();
+s=today.getSeconds();
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);}
+function checkTime(i)
+{if (i<10) {i="0" + i;}return i;}
+window.onload=function(){startTime();}
+</script>
+
+<hr/>
+
+
+<div class="izquierdita">
+<iframe id="miIframe" src="visor_texto.html" name="visor" class="visorazo" allowfullscreen>Tu navegador no soporta este contenido</iframe>
+<nav>
+<a class="botonesparaelegirelcontenidoaver" href="temps/temporada1.html" target="iframelista"><button style="margin-top:13px;" class="estilodelosbotonesparaelegirelcontenidoaver"><img src="fld.gif"> TEMPORADA 1</button></a>
+<a class="botonesparaelegirelcontenidoaver" href="temps/pelis.html" target="iframelista"><button class="estilodelosbotonesparaelegirelcontenidoaver"><img src="fld.gif"> PELICULAS</button></a>
+<a class="botonesparaelegirelcontenidoaver" href="temps/musifondo.html" target="iframelista"><button class="estilodelosbotonesparaelegirelcontenidoaver"><img src="fld.gif"> EXTRAS</button></a>
+<a class="botonesparaelegirelcontenidoaver" href="https://xmenchat.chatango.com" target="iframelista"><button style="margin-bottom:13px;" class="estilodelosbotonesparaelegirelcontenidoaver"><img src="txt.gif"> CHAT</button></a>
+</nav>
+<hr>
+</div>
+
+
+<script>
+        // Función para obtener parámetros de la URL
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            let results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Obtener el parámetro "iframeUrl" de la URL
+        let iframeUrl = getParameterByName('iframeUrl');
+
+        // Si el parámetro existe, cambiar la URL del iframe
+        if (iframeUrl) {
+            document.getElementById('miIframe').src = iframeUrl;
+        }
+    </script>
+
+
+
+<div class="derechita">
+<iframe name="iframelista" class="iframequemuestralalista" src="instructivo.html"></iframe>
+</div>
+
+<p class="parrafoparaqueseacomodeelborde">2024 - <script>document.write(new Date().getFullYear())</script></p>
+<p>(c) website: <img src="ovalozatine.png" width="4%"></p>
+
+</body>
+</html>
